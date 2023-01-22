@@ -1,0 +1,14 @@
+<form action="" [formGroup]="todoForm" (submit)="addTodoToState()">
+    <label for="todo">Add a new Todo</label>
+    <input type="text" placeholder="Add a new Todo ..." name="todo" formControlName="description" [maxLength]="150"/>
+    <label for="important">
+        <input type="checkbox" id="important" name="important" formControlName="isImportant">
+        Is it important?
+    </label>
+    <button type="submit" [disabled]="!todoForm.valid">Add</button>
+</form>
+
+<h3>Your Todo's :</h3>
+<article *ngFor="let todo of $todos | async">
+    <app-todo-list-item  [todo]="todo"></app-todo-list-item>
+</article>

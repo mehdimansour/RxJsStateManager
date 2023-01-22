@@ -1,0 +1,6 @@
+<h3 *ngIf="todo.isImportant" class="isVeryImportant">!!!! is Very Important</h3>
+<div class="grid">
+    <h4>{{todo.description}}</h4>
+    <button type="button" role="button" (click)="updateTodoImportance(todo)">{{ todo.isImportant ? "Not Important" : "Very Important" }}</button>
+    <button type="button" role="button" (click)="deleteThisTodo(todo.id)">Delete</button>
+</div>
